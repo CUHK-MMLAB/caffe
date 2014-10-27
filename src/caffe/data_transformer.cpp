@@ -117,7 +117,7 @@ void DataTransformer<Dtype>::TransformMultiple(const int batch_item_id,
   int sc = 3;  //(224, 224)
   int cr = 4;  // center crop
   // We only do random cropping & scaling when we do training.
-  if (phase_ == Caffe::TRAIN) {
+  if (Caffe::phase() == Caffe::TRAIN) {
     sc = Rand() % 9;
     cr = Rand() % 5;
   }
